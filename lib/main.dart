@@ -59,6 +59,7 @@ class NoteAppState extends State<NoteApp> {
       title: "Note Item App",
       home: Scaffold(
         body: Container(
+          width: 400,
           alignment: Alignment.topCenter,
           child: ListView(
             children: widget.itemList.map((Item item) {
@@ -70,8 +71,13 @@ class NoteAppState extends State<NoteApp> {
               );
             }).toList(),
           ),
-        )
-      )
+        ),
+        floatingActionButton: FloatingActionButton(
+          tooltip: 'Adding new item note',
+          child: Icon(Icons.add),
+          onPressed: _handleFloatingButtonAdd,
+        ),
+      ),
     );
   }
 
@@ -86,6 +92,10 @@ class NoteAppState extends State<NoteApp> {
   }
 
   void _handleItemOnLongPress(Item item){
+
+  }
+
+  void _handleFloatingButtonAdd () async {
 
   }
 }
